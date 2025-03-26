@@ -21,13 +21,6 @@ import infinityPool2 from "./images/infinity-pool-2.webp"
 import minimalistDining from "./images/minimalist-dining.webp"
 import staircase from "./images/staircase.webp"
 
-import catering1 from "./illustrations/catering-1.png"
-import catering2 from "./illustrations/catering-2.png"
-import laundry1 from "./illustrations/laundry-1.png"
-import laundry2 from "./illustrations/laundry-2.png"
-import limousine from "./illustrations/limousine.png"
-import service_24_7 from "./illustrations/service-24_7.png"
-
 
 export const icon = lume;
 export const notFound = _404;
@@ -52,13 +45,4 @@ export const images = {
     infinityPool2,
     minimalistDining,
     staircase
-}
-
-export const illustrations = {
-    catering1,
-    catering2,
-    laundry1,
-    laundry2,
-    limousine,
-    service_24_7
 }
