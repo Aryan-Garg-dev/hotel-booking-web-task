@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Doto:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family:"handbook";
+    src: url("./assets/fonts/handbook.ttf");
+}
+
+@font-face {
+    font-family:"humble";
+    src: url("./assets/fonts/humble.ttf")
+}
+
+@font-face {
+    font-family:"writing";
+    src: url("./assets/fonts/writing.ttf")
+}
+
+@font-face {
+    font-family:"history";
+    src: url("./assets/fonts/history.otf")
+}
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-display: "Boldonse", system-ui;
+    --font-primary: "Josefin Sans", sans-serif;
+    --font-main: "Poppins", sans-serif;
+    --font-secondary: "DM Sans", sans-serif;
+    --font-doto: "Doto", sans-serif;
+
+    --font-cursive: "history", cursive;
+    --font-handbook: "handbook", system-ui;
+    --font-humble: "humble", system-ui;
+    --font-writing: "writing", system-ui;
+
+    /*--color-primary: #0E1F34;*/
+    /*--color-secondary: #0F3460;*/
+    /*--color-accent-secondary: #8C6D5A;*/
+
+    --color-primary: #001935ff;
+    --color-secondary: #102F4Bff;
+    --color-background: #F5E9DA;
+    --color-light: #CFBCADff;
+    --color-article: #2A2A2A;
+    --color-accent-darker: #674A3B;
+    --color-accent-darkest: #513A2F;
+    --color-accent: #AB7D5Fff;
+    --color-accent-secondary: #C0A878;
+    --color-yinmn-blue: #3D5A80;
+    --color-grey: #4F687Eff;
+    --color-powder-blue: #9EB3C2;
+    --color-dark: #1f1f1f;
+}
+
+@layer base {
+    body {
+        @apply selection-accent
+    }
+}
+
+@layer components {
+    .page {
+        @apply h-full w-full
+    }
+}
+
+@layer utilities {
+    .text-fluid {
+        @apply text-[min(10vw,70px)]
+    }
+}
+
+@layer components {
+    .button {
+        @apply p-2.5 py-1.5 rounded-lg text-sm font-main border shadow-sm active:shadow-none active:translate-y-0.5 active:scale-95 select-none
+    }
+
+    .button-primary {
+        @apply bg-accent/90 text-white hover:bg-accent border-none shadow-md
+    }
+
+    .button-outline {
+        @apply border-2 border-accent text-accent hover:text-accent-darker hover:bg-light/25 bg-light/10
+    }
+}
+
+/* Navbar */
+@utility nav-link {
+    @apply text-lg font-primary hover:underline hover:underline-offset-2 cursor-pointer select-none decoration-accent text-accent hover:text-accent-darker hover:decoration-accent-darker
+}
+
+
+/* Footer */
+@utility footer-link {
+    @apply text-lg font-primary hover:underline hover:underline-offset-2 cursor-pointer select-none decoration-neutral-300 text-neutral-300 hover:text-neutral-200 hover:decoration-neutral-200
+}
+
+@utility footer-item {
+    @apply font-primary text-base text-neutral-300
+}
+
+@utility footer-card-title {
+    @apply text-white text-xl font-secondary font-medium
+}
+
+/* Landing */
+@utility landing-section-container {
+    @apply w-full p-10 max-md:p-6 flex flex-col items-center
+}
+
+@utility landing-section-title {
+    @apply font-display text-4xl max-md:text-3xl max-sm:text-2xl text-article mb-3 text-center
+}
+
+@utility landing-section-tag {
+    @apply font-main text-sm max-md:text-xs text-accent-darker bg-accent/30 px-8 max-md:px-5 py-0.5 mb-4 rounded-full border
+}
+
+@utility landing-section-description {
+    @apply max-w-[900px] text-center text-lg max-md:text-base text-accent-darkest font-secondary
+}
+
+@utility landing-card-title {
+    @apply text-primary font-primary text-5xl font-bold max-md:text-4xl max-sm:text-3xl
+}
+
+@utility landing-card-tag {
+    @apply text-accent font-main max-md:text-sm
+}
+
+@utility landing-card-description {
+    @apply text-secondary font-primary text-lg max-md:text-base lg:max-w-lg
+}
+
+@utility landing-card-container {
+    @apply w-full grid grid-cols-2 max-lg:grid-cols-1 gap-10 max-md:gap-6
+}
+
+@utility landing-card-image-container {
+    @apply flex justify-center items-center p-[min(40px,3vw)]
+}
+
+@utility landing-card-image {
+    @apply rounded aspect-[1.5]
+}
+
+@utility landing-card-details-container {
+    @apply flex justify-center items-center p-[min(40px,3vw)]
+}
+
+@utility landing-card-details-subcontainer {
+    @apply flex flex-col justify-center items-start gap-1.5
+}
+
+@utility landing-card-button {
+    @apply mt-1.5 p-3 px-4 py-2 max-md:p-1.5 max-md:px-3 text-lg max-md:text-base rounded-md font-main border shadow-sm active:shadow-none active:translate-y-0.5 active:scale-95 select-none bg-accent/90 text-white hover:bg-accent border-none
+}
+
+
+@utility input {
+    @apply p-1.5 pl-2.5 border-[1.5px] border-accent rounded outline-accent focus:outline-accent-darker focus:ring-accent-secondary focus:ring-2 shadow-sm caret-accent active:shadow-none font-secondary text-accent-darkest bg-white focus:bg-white focus:shadow-inner placeholder:text-accent-darkest/40 out-of-range:border-red-500 out-of-range:border-red-500;
+}
+
+@layer components {
+    .input:-webkit-autofill {
+        background-color: var(--color-background) !important;
+        color: var(--color-accent-darkest) !important;
+        box-shadow: 0 0 0px 1000px #F5E9DA96 inset !important;
+    }
+}
+
+@utility input-label {
+    @apply text-accent-darker text-sm font-main cursor-default pointer-events-auto;
+}
+
+@utility input-container {
+    @apply flex flex-col gap-1
+}
+
+@utility flex-center {
+    @apply flex justify-center items-center
+}
+
+@utility bg-texture {
+    /*background-color: #f5e9da;*/
+    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+}
+
+@utility bg-texture-grain {
+    /*background-color: var(--color-yinmn-blue);*/
+    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+}
+
+@utility selection-accent {
+    @apply selection:bg-accent selection:text-white
+}
+
+.logo {
+    @apply select-none font-cursive text-5xl text-accent-darkest;
+}
+
