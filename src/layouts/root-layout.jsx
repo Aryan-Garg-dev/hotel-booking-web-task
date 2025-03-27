@@ -7,7 +7,7 @@ const RootLayout = () => {
     return (
         <AuthProvider>
             <AnimateScrollProvider>
-                {/*<ScrollRestoration />*/}
+                <ScrollRestoration />
                 <Outlet />
             </AnimateScrollProvider>
         </AuthProvider>

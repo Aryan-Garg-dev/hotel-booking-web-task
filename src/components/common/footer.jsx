@@ -6,7 +6,6 @@ import {
     // otherLinks
 } from "@/constants/footer.js"
 import { FaTwitter, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
-import {useAnimateScroll} from "@/hooks/use-animate-scroll.jsx";
 import {Link} from "react-router";
 
 const Footer = () => {
@@ -48,13 +47,12 @@ const ContactDetails = ()=>(
 )
 
 const QuickLinks = ()=> {
-    const scrollTo = useAnimateScroll();
     return (
         <div className={"w-full flex flex-col justify-center gap-4"}>
             <div className={"footer-card-title"}>Quick Links</div>
             <div className={"flex flex-col justify-center items-start gap-1"}>
                 {quickLinks.map(link => (
-                    <Link className={"footer-link"} key={link.title} to={`/${link.id}`} onClick={()=>scrollTo(link.id)}>{link.title}</Link>
+                    <Link className={"footer-link"} key={link.title} to={`/#${link.id}`}>{link.title}</Link>
                 ))}
             </div>
         </div>

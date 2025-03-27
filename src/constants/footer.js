@@ -9,12 +9,12 @@ export const description = {
 }
 
 export const quickLinks = [
-    { title: "About Us", id: "#" },
-    { title: "Rooms & Suites", id: "#rooms"  },
-    { title: "Dining", id: "#dining" },
-    { title: "Facilities", id: "#facilities" },
-    { title: "Locations", id: "#footer" },
-    { title: "Contact Us", id: "#footer" },
+    { title: "About Us", id: "" },
+    { title: "Rooms & Suites", id: "rooms"  },
+    { title: "Dining", id: "dining" },
+    { title: "Facilities", id: "facilities" },
+    { title: "Locations", id: "footer" },
+    { title: "Contact Us", id: "footer" },
 ]
 
 export const ourProperties = [

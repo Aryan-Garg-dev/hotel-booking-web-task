@@ -3,6 +3,7 @@ import {MdOutlineLocalDining} from "react-icons/md";
 import { LuClock4 } from "react-icons/lu";
 import {diningData} from "@/constants/landing.js";
 import cn from "@/utility/class-names.js";
+import {Link} from "react-router";
 
 const Dining = () => {
     return (
@@ -38,7 +39,7 @@ const DiningCard = ({diningData, direction})=>{
                             <LuClock4 className={"stroke-accent-darker"} size={18} />
                             <p className={"text-accent-darker font-primary text-lg max-w-lg mt-1"}>{diningData.timing}</p>
                         </div>
-                        <button className={"landing-card-button"}>View Menu</button>
+                        <Link to={`/${diningData.title.toLowerCase()}`} className={"landing-card-button"}>View Menu</Link>
                     </div>
                 </div>
             </div>

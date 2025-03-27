@@ -47,7 +47,11 @@ const Signin = () => {
             auth.fullName.trim().length < 3 ||
             !validatePhoneNumber(auth.phNum) ||
             !validatePassword(auth.password)
-        ) return alert("Invalid Input");
+        ) return alert(`
+1. Fullname can be less than 3 characters long.
+2. Phone number must be a valid.
+3. Password must have atleast 1 lowercase letter, 1 uppercase letter, one digit, and one special symbol (@$!%*?&) and atleast 6 characters long.
+        `);
         login({...auth});
         setAuth(prev => ({...prev, password: "" }));
         alert("Logged in Successfull!!!");
