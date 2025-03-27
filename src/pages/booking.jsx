@@ -318,6 +318,7 @@ const ReservationCard = ({ reservationDetails, setReservationDetails, showNextFo
             parseInt(adults) == 0 || (parseInt(adults) + parseInt(children) > 5) ||
             checkInDate == "" ||
             checkOutDate == "" ||
+            new Date(checkInDate).getTime() < Date.now() ||
             new Date(checkOutDate).getTime() < new Date(checkInDate).getTime() ||
             daysBetween(checkOutDate, checkInDate) == 0
         ) return alert(`
@@ -370,7 +371,7 @@ Invalid Request
                         </div>
                     </div>
                 </div>
-                <div className={"flex gap-3 justify-between max-md:flex-col"}>
+                <div className={"w-full flex gap-3 justify-between max-md:flex-col"}>
                     <div className={"w-full input-container"}>
                         <label className={"input-label"} htmlFor={"reservation-form-checkIn"}>Check-in Date</label>
                         <input className={"max-md:w-full input"} type={"date"}
